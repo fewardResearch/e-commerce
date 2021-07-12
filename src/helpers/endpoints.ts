@@ -1,0 +1,5 @@
+export const host = "http://localhost:3000"
+export const sliderApi = "/api/slider"
+export const navigationApi = "/api/navigation"
+export const productsApi = "/api/products"
+export const footerMenuApi = "/api/footer-menu"

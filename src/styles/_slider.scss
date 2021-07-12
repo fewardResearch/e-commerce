@@ -1,0 +1,16 @@
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 10;
+    font-size: 3rem;
+
+    &.slick-prev {
+        left: 1.5rem;
+    }
+
+    &.slick-next {
+        right: 1.5rem;
+    }
+}
