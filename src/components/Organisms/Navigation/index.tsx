@@ -8,8 +8,9 @@ import Placement from 'components/HOC/Placement';
 import Mobile from './mobile';
 import Desktop from './desktop';
 
-// Helpers
-import { navigationApi } from 'helpers/endpoints';
+// Utilities
+import { navigationApi } from 'utils/endpoints';
+import { getData } from 'utils/fetch';
 
 // Interface
 import { IData } from './interface';
@@ -17,17 +18,8 @@ import { IData } from './interface';
 const Navigation: FC = (): ReactElement => {  
     const [data, setData] = useState<IData[] | []>([]);
 
-    const getData = () => {
-        fetch(navigationApi)
-        .then(response => response.json())
-        .then(data => {
-            setData(data);
-        })
-        .catch(error => console.error(error));
-    };
-
     useEffect(() => {
-        getData();
+        getData(navigationApi, setData);
     }, []);
     
     return(

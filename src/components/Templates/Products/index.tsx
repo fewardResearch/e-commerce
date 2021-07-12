@@ -6,23 +6,15 @@ import Product from 'components/Organisms/Product'
 
 import IProduct from 'components/Organisms/Product/interface'
 
-// Helpers
-import { productsApi } from 'helpers/endpoints'
+// Utilities
+import { productsApi } from 'utils/endpoints';
+import { getData } from 'utils/fetch';
 
 const Products: FC = (): ReactElement => {
     const [products, setProducts] = useState<IProduct[] | []>([]);
 
-    const getData = () => {
-        fetch(productsApi)
-        .then(response => response.json())
-        .then(data => {
-            setProducts(data);
-        })
-        .catch(error => console.error(error));
-    };
-
     useEffect(() => {
-        getData();
+        getData(productsApi, setProducts);
     }, []);
 
     return(

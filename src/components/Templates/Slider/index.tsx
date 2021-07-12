@@ -12,8 +12,9 @@ import Image from 'components/Atoms/Image';
 // Organisms
 import Banner from 'components/Organisms/Banner'
 
-// Helpers
-import { sliderApi } from 'helpers/endpoints'
+// Utilities
+import { sliderApi } from 'utils/endpoints'
+import { getData } from 'utils/fetch';
 
 // Settings
 import settings from './settings'
@@ -24,17 +25,8 @@ import ISlider from './interface';
 const Slider: FC = (): ReactElement => {
     const [data, setData] = useState<ISlider[] | []>([]);
 
-    const getData = () => {
-        fetch(sliderApi)
-        .then(response => response.json())
-        .then(data => {
-            setData(data);
-        })
-        .catch(error => console.error(error));
-    };
-
     useEffect(() => {
-        getData();
+        getData(sliderApi, setData);
     }, []);
 
     return(

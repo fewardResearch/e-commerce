@@ -1,8 +1,9 @@
 // React
 import { FC, ReactElement, memo, useEffect, useState } from 'react';
 
-// Endpoints
-import { footerMenuApi } from 'helpers/endpoints';
+// Utilities
+import { footerMenuApi } from 'utils/endpoints';
+import { getData } from 'utils/fetch';
 
 // Interface
 import IFooterMenu from './interface';
@@ -15,9 +16,7 @@ const FooterMenu: FC = (): ReactElement => {
     const [data, setData] = useState<IFooterMenu[] | []>([]);
 
     useEffect(() => {
-        fetch(footerMenuApi)
-        .then(response => response.json())
-        .then(data => setData(data));
+        getData(footerMenuApi, setData);
     }, []);
 
     return(

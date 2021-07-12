@@ -24,8 +24,8 @@ import Footer from 'components/Templates/Footer';
 // Interface
 import IProduct from 'components/Organisms/Product/interface'
 
-// Helpers
-import { host, productsApi } from 'helpers/endpoints'
+// Utilities
+import { host, productsApi } from 'utils/endpoints'
 
 type Props = {
     product: IProduct
