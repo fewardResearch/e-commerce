@@ -10,7 +10,7 @@ import Desktop from './desktop';
 
 // Utilities
 import { navigationApi } from 'utils/endpoints';
-import { getData } from 'utils/fetch';
+import { getData } from 'utils/data';
 
 // Interface
 import { IData } from './interface';

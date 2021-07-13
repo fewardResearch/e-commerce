@@ -21,7 +21,7 @@ import ICartItem from './interface'
 import { GrClose } from 'react-icons/gr'
 
 // Utilities
-import { sumValues } from 'utils/calc';
+import { sumValues } from 'utils/array';
 
 const CartItem:React.FC<ICartItem> = ({
     id,

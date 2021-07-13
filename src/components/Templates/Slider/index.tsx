@@ -14,7 +14,7 @@ import Banner from 'components/Organisms/Banner'
 
 // Utilities
 import { sliderApi } from 'utils/endpoints'
-import { getData } from 'utils/fetch';
+import { getData } from 'utils/data';
 
 // Settings
 import settings from './settings'

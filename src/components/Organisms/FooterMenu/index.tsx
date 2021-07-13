@@ -3,7 +3,7 @@ import { FC, ReactElement, memo, useEffect, useState } from 'react';
 
 // Utilities
 import { footerMenuApi } from 'utils/endpoints';
-import { getData } from 'utils/fetch';
+import { getData } from 'utils/data';
 
 // Interface
 import IFooterMenu from './interface';

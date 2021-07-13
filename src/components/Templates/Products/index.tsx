@@ -8,7 +8,7 @@ import IProduct from 'components/Organisms/Product/interface'
 
 // Utilities
 import { productsApi } from 'utils/endpoints';
-import { getData } from 'utils/fetch';
+import { getData } from 'utils/data';
 
 const Products: FC = (): ReactElement => {
     const [products, setProducts] = useState<IProduct[] | []>([]);

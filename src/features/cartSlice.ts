@@ -1,5 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+// Utils
+import { findItemInArrayById } from 'utils/array';
+
 // Define a type for the slice state
 interface CartState {
   value: CartItem[]
@@ -25,7 +28,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action: PayloadAction<CartItem>) {
-      if(state.value.map((item) => item.id).indexOf(action.payload.id)) {
+      if(findItemInArrayById(state.value, action.payload.id) === undefined) {
         state.value.push(action.payload);
       }
     },
