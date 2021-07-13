@@ -20,6 +20,9 @@ import ICartItem from './interface'
 // Icons
 import { GrClose } from 'react-icons/gr'
 
+// Utilities
+import { sumValues } from 'utils/calc';
+
 const CartItem:React.FC<ICartItem> = ({
     id,
     slug,
@@ -73,16 +76,6 @@ const CartHeader:React.FC = (): ReactElement => {
 const CartFooter:React.FC = (): ReactElement => {
     const cart = useAppSelector((state) => state.cart.value);
 
-    const cartTotal = (list): number => {
-        let total = 0;
-
-        list.map((item, index) => {
-            total += item.price;
-        });
-
-        return total;
-    };
-
     const { t } = useTranslation();
     
     return(
@@ -92,7 +85,7 @@ const CartFooter:React.FC = (): ReactElement => {
                     <Typography type="h2" fontSize="3xl" weight="bold" margin={3}>{t("cart:total")}:</Typography>
                 </div>
                 <div>
-                    <Typography type="p" fontSize="3xl" weight="bold" margin={3}>{cartTotal(cart)} ₺</Typography>
+                    <Typography type="p" fontSize="3xl" weight="bold" margin={3}>{sumValues(cart.map(item => item.price))} ₺</Typography>
                 </div>
             </div>
             <Button type="button" uppercase bgColor="yellow-400" weight="bold" fontSize="lg" borderRadius="lg" fullWidth={true} ySize={2} className="mb-4">{t("cart:checkout")}</Button>
