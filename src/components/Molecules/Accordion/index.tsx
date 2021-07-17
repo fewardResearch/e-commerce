@@ -1,5 +1,5 @@
 // React
-import { FC, ReactElement } from 'react';
+import React, { FC, ReactElement } from 'react';
 
 // Interface
 import IAccordion from './interface';

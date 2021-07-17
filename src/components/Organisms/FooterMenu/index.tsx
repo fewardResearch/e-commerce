@@ -1,5 +1,5 @@
 // React
-import { FC, ReactElement, memo, useEffect, useState } from 'react';
+import React, { FC, ReactElement, memo, useEffect, useState } from 'react';
 
 // Utilities
 import { footerMenuApi } from 'utils/endpoints';
